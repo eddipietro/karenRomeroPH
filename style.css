@@ -1,0 +1,410 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+body {
+	font-family: "Raleway", sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-weight: 400;
+	line-height: 1;
+}
+nav ul {
+	float: right;
+	margin: 0;
+}
+nav li {
+	display: none;
+	float: left;
+	list-style: none;
+}
+nav a,
+.hamburger {
+	display: inline-block;
+	color: #fff;
+	text-transform: uppercase;
+	text-decoration: none;
+	padding: 28px 25px;
+	transition: 0.3s all;
+}
+nav a:hover,
+.menu-fixed a:hover {
+	background: #f26522;
+	color: #fff;
+}
+.hamburger {
+	float: right;
+}
+.hamburger span {
+	display: inline-block;
+	width: 0;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	
+}
+.hamburger:before {
+	content: "\2630";
+	font-size: 2em;
+	
+}
+.hamburger, ul {
+	visibility: visible;
+}
+
+.inner {
+	padding: 0 3vw;
+}
+section .inner {
+	padding: 50px 3vw;
+	line-height: 1.5;
+}
+section.alternate {
+	background: #000;
+	color: #fff;
+}
+.hero {
+	background: url("https://upload.wikimedia.org/wikipedia/commons/c/c5/Moraine_Lake_17092005.jpg")
+		no-repeat center;
+	background-size: cover;
+	background-color: rgba(0, 0, 0, 0.5);
+	background-blend-mode: multiply;
+	min-height: 100vh;
+	width: 100%;
+}
+header {
+	position: fixed;
+	width: 100%;
+	padding-top: 30px;
+	transition: 0.7s all;
+	z-index: 100;
+}
+header.menu-fixed {
+	top: 0;
+	right: 0;
+	width: 100%;
+	padding-top: 0;
+	background: rgba(255, 255, 255, 0.9);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+	z-index: 2;
+}
+.menu-fixed nav a,
+.menu-fixed .hamburger {
+	color: #000;
+}
+.menu-fixed .hamburger {
+	padding: 20px;
+}
+.logo {
+	float: left;
+}
+.logo_svg {
+	display: block;
+	max-width: 150px;
+	max-height: 128px;
+	fill: white;
+	transition: 0.7s all;
+}
+.menu-fixed .logo_svg {
+	max-width: 75px;
+	max-height: 64px;
+	fill: black;
+	margin-top: 6px;
+}
+.logo_svg #logo_text {
+	opacity: 1;
+	transition: 0.7s opacity;
+}
+.menu-fixed .logo_svg #logo_text {
+	opacity: 0;
+}
+
+@media screen and (min-width: 721px) {
+	.hamburger {
+		display: none;
+	}
+	nav ul li {
+		display: inline;
+	}
+}
+@media screen and (min-width: 960px) {
+	.inner {
+		width: 800px;
+		margin: 0 auto;
+	}
+}
+@media screen and (min-width: 1201px) {
+	.logo_svg {
+		max-width: 172px;
+		max-height: 147px;
+	}
+}
+
+
+/*PARTE 2*/
+
+.hero-section {
+	align-items: flex-start;
+	background-image: linear-gradient(15deg, #0f4667 0%, #2a6973 150%);
+	display: flex;
+	min-height: 100%;
+	justify-content: center;
+	padding: var(--spacing-xxl) var(--spacing-l);
+  }
+  
+  .card-grid {
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-column-gap: var(--spacing-l);
+	grid-row-gap: var(--spacing-l);
+	max-width: var(--width-container);
+	width: 100%;
+  }
+  
+  @media (min-width: 540px) {
+	.card-grid {
+	  grid-template-columns: repeat(2, 1fr);
+	}
+	
+  }
+  
+  @media (min-width: 960px) {
+	.card-grid {
+	  grid-template-columns: repeat(4, 1fr);
+	}
+  }
+  
+  .card {
+	list-style: none;
+	position: relative;
+  }
+  
+  .card:before {
+	content: "";
+	display: block;
+	padding-bottom: 150%;
+	width: 100%;
+  }
+  
+  .card__background {
+	background-size: cover;
+	background-position: center;
+	border-radius: var(--spacing-l);
+	bottom: 0;
+	filter: brightness(0.75) saturate(1.2) contrast(0.85);
+	left: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	transform-origin: center;
+	trsnsform: scale(1) translateZ(0);
+	transition: filter 200ms linear, transform 200ms linear;
+  }
+  
+  .card:hover .card__background {
+	transform: scale(1.05) translateZ(0);
+  }
+  
+  .card-grid:hover > .card:not(:hover) .card__background {
+	filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+  }
+  
+  .card__content {
+	left: 0;
+	padding: var(--spacing-l);
+	position: absolute;
+	top: 0;
+  }
+  
+  .card__category {
+	color: var(--text-light);
+	font-size: 0.9rem;
+	margin-bottom: var(--spacing-s);
+	text-transform: uppercase;
+  }
+  
+  .card__heading {
+	color: var(--text-lighter);
+	font-size: 1.9rem;
+	text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.2);
+	line-height: 1.4;
+	word-spacing: 100vw;
+  }
+  
+/**/
+
+.barra-redes {
+	left: 0; /* Sirve para que la bara quede en la izquierda */
+	position: fixed; /* Sirve para que quede fijo osea pegajoso*/
+	top: 25%; /* Bajamos la barra 200px de arriba a abajo */
+	z-index: 2000; /* Utilizamos la propiedad z-index para que no se superponga algún otro elemento como sliders, galerías, etc */
+}
+
+.ul {
+	list-style: none;
+}
+
+.links {
+	background-color: #000000;
+	color: #ffffff;
+	display: inline-block;
+	height: calc(100px - 40px);
+	line-height: calc(100px - 80px);
+	padding: 20px 20px;
+	text-align: center;
+	text-decoration: none;
+	transition: all 300ms ease;
+	width: calc(100px - 40px);
+	/* Establecemos una transición a todas las propiedades */
+}
+
+.links:hover {
+	background-color: rgba(0, 0, 0, 0.6); /* Cambiamos el fondo cuando se hace hover */
+	padding: 20px 60px; /* Hacemos mas grande el espacio cuando se hace hover */
+}
+
+/* Establecemos los colores de cada red social, aprovechando su clase */
+.fa-facebook {
+	background-color: #404040;
+} 
+
+.fa-twitter {
+	background-color: #808080;
+}
+
+.fa-instagram {
+	background-color: #000000;
+}
+
+.fa-google {
+	background-color: #808080;
+}
+
+.fa-envelope {
+	background-color: #404040;
+}
+
+
+
+@media (max-width: 480px) {
+
+.barra-redes {
+	top: 40%;
+	opacity: 0.9;
+
+}
+
+.hamburger {
+
+}
+ nav ul li::after {
+	display: inline-block;
+
+}
+
+
+
+
+
+
+
+#menu__toggle {
+	opacity: 0;
+  }
+  
+  
+  #menu__toggle:checked ~ .menu__btn > span::before {
+	top: 0;
+	transform: rotate(0);
+  }
+  #menu__toggle:checked ~ .menu__btn > span::after {
+	top: 0;
+	transform: rotate(90deg);
+  }
+  #menu__toggle:checked ~ .menu__box {
+	visibility: visible;
+	left: 0;
+  }
+  
+  .menu__btn {
+	display: flex;
+	align-items: center;
+	position: fixed;
+	top: 20px;
+	left: 20px;
+  
+	width: 26px;
+	height: 26px;
+  
+	cursor: pointer;
+	z-index: 1;
+  }
+  
+  .menu__btn > span,
+  .menu__btn > span::before,
+  .menu__btn > span::after {
+	display: block;
+	position: absolute;
+  
+	width: 100%;
+	height: 2px;
+  
+	background-color: #616161;
+  
+	transition-duration: .25s;
+  }
+  .menu__btn > span::before {
+	content: '';
+	top: -8px;
+  }
+  .menu__btn > span::after {
+	content: '';
+	top: 8px;
+  }
+  
+  .menu__box {
+	display: block;
+	position: fixed;
+	visibility: hidden;
+	top: 0;
+	left: -100%;
+  
+	width: 300px;
+	height: 100%;
+  
+	margin: 0;
+	padding: 80px 0;
+  
+	list-style: none;
+  
+	background-color: #ECEFF1;
+	box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
+  
+	transition-duration: .25s;
+  }
+  
+  .menu__item {
+	display: block;
+	padding: 12px 24px;
+  
+	color: #333;
+  
+	font-family: 'Roboto', sans-serif;
+	font-size: 20px;
+	font-weight: 600;
+  
+	text-decoration: none;
+  
+	transition-duration: .25s;
+  }
+  .menu__item:hover {
+	background-color: #CFD8DC;
+  }
+}
+
+
+
+
+/**/
+
